@@ -1,0 +1,49 @@
+{
+    "manifest_version": 2,
+    "name": "[DEFAULT NAME]",
+    "version": "1.0",
+
+    "description": "[DEFAULT PROJECT DESCRIPTION]",
+    "icons": {
+        "32": "icons/action_icon_32.png",
+        "48": "icons/main_icon_48.png"
+    },
+    "permissions": [
+        "activeTab",
+        "*://*.google.com/*"
+    ],
+
+    "browser_action": {
+        "default_icon": {
+           "32": "icons/action_icon_32.png"
+        },
+        "default_title": "[DEFAULT TITLE]",
+        "default_popup": "action_menu/action_menu.html"
+    },
+
+    "content_scripts": [
+        {
+            "matches": [
+                "*://*.google.com/*"
+            ],
+            "js": ["content_scripts/content_script.js"]
+        }
+    ],
+
+    "commands": {
+        "example_shortcut": {
+            "suggested_key": {
+                "default": "Alt+R"
+            },
+            "description": "[Perform an action on ALT+R]"
+        }
+    },
+
+    "background": {
+        "scripts": ["background_scripts/background_script.js"]
+    },
+
+    "web_accessible_resources": [
+        
+    ]
+}
